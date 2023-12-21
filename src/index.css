@@ -9,3 +9,19 @@ body {
   font-family: 'Montserrat', sans-serif;
 
 }
+
+.paginate {
+  display: flex;
+  align-items: center;
+  justify-content:end;
+}
+
+.paginate li {
+  width: 30px;
+  height: 30px;
+  border: 1px solid rgb(51, 48, 48);
+  margin: 5px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
