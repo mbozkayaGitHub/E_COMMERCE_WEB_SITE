@@ -5,8 +5,7 @@ import Loading from "../Loading";
 import Product from "./Product";
 import ReactPaginate from "react-paginate";
 
-const Products = ({category}) => {
-
+const Products = ({ category, sort }) => {
   const dispatch = useDispatch();
   const { products, productsStatus } = useSelector((state) => state.products);
 
@@ -15,7 +14,7 @@ const Products = ({category}) => {
   // Simulate fetching items from another resources.
   // (This could be items from props; or items loaded in a local state
   // from an API endpoint with useEffect and useState)
-const itemsPerPage = 6
+  const itemsPerPage = 6;
 
   const endOffset = itemOffset + itemsPerPage;
   console.log(`Loading items from ${itemOffset} to ${endOffset}`);
@@ -31,42 +30,46 @@ const itemsPerPage = 6
     setItemOffset(newOffset);
   };
 
-
-  console.log(products, "products");
+  console.log(sort, "sort");
 
   useEffect(() => {
-    if(category){
+    if (category) {
       dispatch(getCategoryProducts(category));
-    }else {
+    } else {
       dispatch(getProducts());
     }
-   
-  }, [dispatch,category]);
+  }, [dispatch, category]);
   return (
-    <div >
-      {productsStatus == "LOADING" ? 
+    <div>
+      {productsStatus == "LOADING" ? (
         <Loading />
-     
-       :  
-       <>  
-        <div className="flex flex-wrap">
-         { currentItems?.map((product, i)=> (
-          <Product key={i} product={product} />
-          ))}
-        </div>
-        <ReactPaginate
-        className="paginate"
-        breakLabel="..."
-        nextLabel=">"
-        onPageChange={handlePageClick}
-        pageRangeDisplayed={5}
-        pageCount={pageCount}
-        previousLabel="<"
-        renderOnZeroPageCount={null}
-      />
-
+      ) : (
+        <>
+          <div className="flex flex-wrap">
+            {currentItems
+              ?.sort((a, b) =>
+                sort == "inc"
+                  ? a.price - b.price
+                  : sort == "dec"
+                  ? b.price - a.price
+                  : ""
+              )
+              ?.map((product, i) => (
+                <Product key={i} product={product} />
+              ))}
+          </div>
+          <ReactPaginate
+            className="paginate"
+            breakLabel="..."
+            nextLabel=">"
+            onPageChange={handlePageClick}
+            pageRangeDisplayed={5}
+            pageCount={pageCount}
+            previousLabel="<"
+            renderOnZeroPageCount={null}
+          />
         </>
-      }
+      )}
     </div>
   );
 };
