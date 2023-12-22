@@ -9,15 +9,15 @@ import Products from '../components/home/Products'
 const Home = () => {
 
   const [sorting, setSorting] = useState("");
-  const [category, setcategory] = useState("")
+  const [category, setCategory] = useState("")
 
   return (
     <div>
         <SliderComp/>
         <Sorting/>
         <div className='flex'>
-             <Category/>
-             <Products/>
+             <Category setCategory={setCategory}/>
+             <Products category={category}/>
 
         </div>
     </div>
