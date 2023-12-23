@@ -9,8 +9,13 @@ const DetailComp = ({ productDetail }) => {
     }
   };
   const increment = () => {
+    if(quantity < productDetail?.rating?.count )
     setQuantity(quantity + 1);
   };
+
+  const addBasket = () => {
+    
+  }
 
   return (
     <div className="flex gap-10 my-10">
@@ -36,7 +41,7 @@ const DetailComp = ({ productDetail }) => {
             -
           </div>
           <input
-            className="w-5 text-center text-4xl font-bold"
+            className="w-10 text-center text-4xl font-bold"
             type="text"
             value={quantity}
           />
@@ -44,7 +49,9 @@ const DetailComp = ({ productDetail }) => {
             +
           </div>
         </div>
-        <div className="my-4 border w-[200px] text-2xl rounded-md bg-gray-200 cursor-pointer h-16 flex items-center justify-center">
+        <div 
+        onClick={addBasket}
+        className="my-4 border w-[200px] text-2xl rounded-md bg-gray-200 cursor-pointer h-16 flex items-center justify-center">
           Add to basket
         </div>
       </div>
