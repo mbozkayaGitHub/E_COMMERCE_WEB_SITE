@@ -1,9 +1,17 @@
-import React from "react";
+import React, { useState } from "react";
 
 const DetailComp = ({ productDetail }) => {
+  const [quantity, setQuantity] = useState(0);
 
+  const decrement = () => {
+    if (quantity > 0) {
+      setQuantity(quantity - 1);
+    }
+  };
+  const increment = () => {
+    setQuantity(quantity + 1);
+  };
 
-  
   return (
     <div className="flex gap-10 my-10">
       <img
@@ -24,13 +32,17 @@ const DetailComp = ({ productDetail }) => {
           {productDetail?.price} <span className="text-sm">TL</span>
         </div>
         <div className="flex items-center gap-5 my-4">
-          <div className="text-5xl cursor-pointer">-</div>
+          <div onClick={decrement} className="text-5xl cursor-pointer">
+            -
+          </div>
           <input
             className="w-5 text-center text-4xl font-bold"
             type="text"
-            value="0"
+            value={quantity}
           />
-          <div className="text-4xl cursor-pointer">+</div>
+          <div onClick={increment} className="text-4xl cursor-pointer">
+            +
+          </div>
         </div>
         <div className="my-4 border w-[200px] text-2xl rounded-md bg-gray-200 cursor-pointer h-16 flex items-center justify-center">
           Add to basket
