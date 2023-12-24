@@ -1,7 +1,11 @@
 import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import { addToCard } from "../../redux/cartSlice";
 
 const DetailComp = ({ productDetail }) => {
   const [quantity, setQuantity] = useState(0);
+
+  const dispatch = useDispatch()
 
   const decrement = () => {
     if (quantity > 0) {
@@ -14,7 +18,7 @@ const DetailComp = ({ productDetail }) => {
   };
 
   const addBasket = () => {
-    
+    dispatch(addToCard({id:productDetail?.id,title:productDetail?.title,image:productDetail?.image,price: productDetail?.price, quantity:quantity}))
   }
 
   return (
