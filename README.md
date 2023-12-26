@@ -1,34 +1,71 @@
-# Getting Started with Create React App
+# E-COMMERCE-WEB-SITE 
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Description
 
-## Available Scripts
+This is a E-Commerce Web-Site that you can do shopping.This app allows you to select the item that you like to buy, add to ```basket``` and see the description about that item.
+You can add item to the basket and delete it from basket.Then, App can calculate the amount of money you have to pay.
 
-In the project directory, you can run:
+## `Programming Languages & Libraries & Framework & Tech-Tools used in the project` 
 
-### `yarn start`
+###  HTML | CSS | React | Tailwind CSS | Redux-Toolkit | React-router-dom | React-slick | React-paginate |fakestoreapi.com|
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
 
+<<<<<<< HEAD
 ### `yarn test` `deneme`
+=======
+## `Project - Structure` 
+>>>>>>> adb343012a8f79d8b6fcbc32b5663b655dae0ee4
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+#### 009 - E-Commerce-Web-Site (folder)
+```
 
-### `yarn build`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+├── node_modules
+├── public
+│     └── index.html
+├── src   
+│    ├── components
+│    │     ├──Cart
+|    |           └── CartComp.js
+│    │     ├──detail
+│    │     ├──footer
+│    │     ├──home
+│    │     ├──navbar
+|    |             └── navbarItem.js
+|    |                       └── NavbarLeft.jsx
+|    |                       └── NavbarRight.jsx
+|    |     ├──Loading.jsx                 
+│    │     ├──Card
+│    ├── Container
+│    │     └── PageContainer.jsx
+│    ├── pages
+│    │     ├── Cart.jsx
+│    │     ├── Detail.jsx
+│    │     ├── Home.jsx
+│    │     └── Search.jsx
+│    ├── redux
+│    │     ├── cartSlice.js
+│    │     ├── categorySlice.js
+│    │     ├── productSlice.js
+│    │     └── searchSlice.js
+│    │     └── store.js
+│    ├── utils.js
+            └── status.js
+│    ├── App.js
+│    ├── index.js
+│    └── index.css
+├── gitignore
+├── package-lock.json
+├── package.json
+├── README.md
+├── tailwind.config.js
+└── yarn.lock
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+```
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
 
+<<<<<<< HEAD
 ### `yarn eject`
  
 **Note: this is a one-way operation. Once you `eject`, you can't go back!**
@@ -68,3 +105,5 @@ This section has moved here: [https://facebook.github.io/create-react-app/docs/d
 ### `yarn build` fails to minify
 
 This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+=======
+>>>>>>> adb343012a8f79d8b6fcbc32b5663b655dae0ee4
