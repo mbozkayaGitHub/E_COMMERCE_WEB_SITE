@@ -9,9 +9,8 @@ import { useNavigate } from "react-router-dom";
 const NavbarRight = () => {
 const dispatch = useDispatch()
 const navigate = useNavigate()
-const {carts} = useSelector(state => state.carts)
+const {itemCount} = useSelector(state => state.carts)
 
-console.log(carts ,"carts");
 
 useEffect(()=> {
   dispatch(getCartTotal())
@@ -25,7 +24,7 @@ useEffect(()=> {
       </div>
       <FaRegHeart size={28} />
       <div onClick={() => navigate("cart")} className="relative">
-        <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">{carts?.length}</div>
+        <div className="absolute -top-3 -right-3 bg-red-500 text-white rounded-full w-5 h-5 flex items-center justify-center">{itemCount}</div>
         <SlBasket size={28} />
       </div>
     </div>
