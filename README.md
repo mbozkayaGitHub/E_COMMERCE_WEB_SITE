@@ -13,8 +13,45 @@ You can add item to the basket and delete it from basket.Then, App can calculate
 
 ## `Project- Skeleton` 
 
-In the project directory, you can run:
+009 - E-Commerce-Web-Site (folder)
+```
 
+|
+|----readme.md         
+SOLUTION
+├── node_modules
+├── public
+│     └── index.html
+├── src   
+│    ├── components
+│    │     ├──Card
+|    |           └── CardComp.js
+│    │     ├──detail
+│    │     ├──footer
+│    │     ├──home
+│    │     ├──navbar
+                  └── navbarItem.js
+|    |                       └── NavbarLeft.jsx
+|    |                       └── NavbarRight.jsx
+│    │     ├──Card
+│    ├── context
+│    │     └── AuthContext.js
+│    ├── pages
+│    │     ├── Login.js
+│    │     ├── Register.js
+│    │     ├── Main.js
+│    │     └── MovieDetail.js
+│    ├── router
+│    │     └── Router.js
+│    ├── App.js
+│    ├── App.css
+│    ├── index.js
+│    └── index.css
+├── package.json
+├── .env
+└── yarn.lock
+
+```
 ### `yarn start`
 
 Runs the app in the development mode.\
